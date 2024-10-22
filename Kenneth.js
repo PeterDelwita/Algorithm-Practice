@@ -9,6 +9,7 @@ const DOMSelectors = {
 const history = [];
 
 function returnInput(input) {
+  // Not an algorithm; lacks iteration
   let output;
 
   if (input == 0) {
@@ -23,12 +24,15 @@ function returnInput(input) {
 }
 
 function rockPaperScissors(input) {
+  // This is an algorithm; it contains sequencing, selection, and iteration
   const random = Math.floor(Math.random() * 100);
   let opponentChoice;
   let outcome;
 
   for (let i = 0; i <= random; i++) {
+    // Iteration (for loop)
     if (i % 3 == 0) {
+      // Selection (use of if statements)
       opponentChoice = "rock";
     } else if (i % 2 == 0) {
       opponentChoice = "paper";
@@ -38,6 +42,7 @@ function rockPaperScissors(input) {
   }
 
   if (opponentChoice == "rock") {
+    // More selection (also sequencing due to the presence of multiple steps)
     if (input == 1) {
       outcome = "win";
     } else if (input == 2) {
@@ -62,9 +67,9 @@ function rockPaperScissors(input) {
       outcome = "draw";
     }
   }
-  history.push(outcome);
+  history.push(outcome); // Sequencing; another step
 
-  DOMSelectors.history.innerHTML = "";
+  DOMSelectors.history.innerHTML = ""; // Sequencing; more steps
   DOMSelectors.content.insertAdjacentHTML(
     "afterbegin",
     `<div class="card" id="${outcome}">
@@ -77,14 +82,17 @@ function rockPaperScissors(input) {
 }
 
 function getHistory() {
+  // Algorithm; contains sequencing, selection, and iteration
   DOMSelectors.content.innerHTML = "";
   DOMSelectors.history.innerHTML = "";
   let win = 0;
   let lose = 0;
-  let draw = 0;
+  let draw = 0; // Sequencing; defining these variables is the first step in the function
 
   for (let i = 0; i < history.length; i++) {
+    // Iteration; use of for loop
     if (history[i] == "win") {
+      // Selection; use of if and else statements
       win++;
     } else if (history[i] == "lose") {
       lose++;
