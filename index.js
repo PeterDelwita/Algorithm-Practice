@@ -32,9 +32,9 @@ function decimalToBinary(decimal) {
   while (decimal > 0) {
     if (2 ** power < decimal) {
       decimal -= 2 ** power;
-      binary += "1"; // Needs fixing
+      binary += 1; // Needs fixing
     } else if (2 ** power > decimal) {
-      binary += "0";
+      binary += 0; // Needs fixing
     }
     power -= 1;
   }
